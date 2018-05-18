@@ -1,0 +1,277 @@
+Project 2 Test Results: Sloan Kiechel
+
+
+***************************************************************************************************
+**************************************EmployeeManager Tests****************************************
+***************************************************************************************************
+loadEmployees() testing.
+        Test 1: file exists but is empty
+        Test 1 Passed
+
+        Test 2: loadTest.txt file, two employess, one admin, one not
+        Test 2 Passed
+
+        Test 3: file doesn't exist. Should declare error message, still create admin.
+        Cannot open not-a-file.txt
+        Test 3 Passed
+
+saveEmployees() Testing.
+        Test 1: Saving to a file that already exists
+        Test 1: passed
+
+addEmployee() Testing
+        Test 1: Normal case, add normal employee with valid fields
+Employee added and saved to staff file
+        Test 1: passed
+
+        Test 2: Password empty
+Username or password not valid. User not added.
+        Test 2: passed
+
+        Test 3: username empty
+Username or password not valid. User not added.
+        Test 3: passed
+
+        Test 4: user already exists
+User testUser already exists. No user added
+        Test 4: passed
+
+isAdmin() testing
+        Test 1: Employee is an admin
+        Test 1 Passed
+
+        Test 2: Employee is not an admin
+        Test 2 Passed
+
+        Test 3: Employee does not exist
+        The user bob does not exist
+        Test 3 Passed
+
+verifyLogin() testing
+        Test 1: valid login
+        Test 1 Passed
+
+        Test 2: Invalid login
+        Test 2 Passed
+
+        Test 3: Employee does not exist
+        Test 3 Passed
+
+Employee added and saved to staff file
+Employee added and saved to staff file
+changePassword() testing
+        Test 1: Using valid usernames/new passwords
+        Test 1 passed
+
+        Test 2: Invalid (empty) password
+        Password cannot be empty
+        Test 2 passed
+
+        Test 3: New password same as old
+        New password cannot be the same as current
+        Test 3 passed
+
+        Test 4: User does not exist
+        Error, user does not exist. Report to developer
+        Test 4 Passed
+
+Employee added and saved to staff file
+Employee added and saved to staff file
+Employee added and saved to staff file
+deleteEmployee() testing
+        Test 1: Normal usage, delete valid user
+        User normie was successfully deleted.
+        User admin2 was successfully deleted.
+        Test 1 passed.
+
+        Test 2: empty username
+        Username cannot be empty
+        Test 2 passed.
+
+        Test 3: user does not exist
+        The user woof does not exist. No user deleted
+        Test 3 passed.
+
+        There are 2 users in the system:
+        1. Username: testAdmin  Role: System Administrator
+        2. Username: testUser   Role: Branch Staff
+
+		
+***************************************************************************************************
+****************************************ClientManager Tests****************************************
+***************************************************************************************************		
+loadClients() testing
+        Test 1: Empty file
+        Test 1 passed
+
+        Test 2: Valid file with two valid clients
+        Test 2 passed
+
+        Test 3: invalid file
+        Cannot open not-a-file.txt
+        Test 3 Passed
+
+saveClients() test
+        Test 1: saving to valid file
+        Test 1 Passed
+
+addClient() Testing
+        Test 1: Normal case, add client with valid fields
+        Client added and saved to client file
+        Test 1 passed
+
+        Test 2: Empty Fields
+                Test 2.1: Empty name
+        One or more variables are empty. No client is added
+                Test2.1 passed
+                Test 2.2: Empty address
+        One or more variables are empty. No client is added
+                Test2.2 passed
+                Test 2.3: Empty employer
+        One or more variables are empty. No client is added
+                Test2.3 passed
+                Test 2.4: Empty social security number
+        One or more variables are empty. No client is added
+                Test2.4 passed
+                Test 2.5: Empty income
+        One or more variables are empty. No client is added
+                Test2.5 passed
+        Test 2 passed
+
+        Test 3 client already exists
+        One or more variables are empty. No client is added
+        Test 3 passed
+
+edit client testing
+        Test 1: Valid client, valid edits
+        Client added and saved to client file
+                Test 1.1: change all
+        Client information updated
+                Test 1.1 passed
+                Test 1.2 edit address only
+        Client information updated
+                Test 1.2 passed
+                Test 1.3 edit employer only
+        Client information updated
+                Test 1.3 passed
+                Test 1.4 edit SS number only
+        Client information updated
+                Test 1.4 passed
+                Test 1.5 edit income only
+        Client information updated
+                Test 1.5 passed
+                Test 1.6 edit nothing
+        Client information updated
+                Test 1.6 passed
+        Test 1 passed
+
+        Test 2: Invalid input
+                Test 2.1: empty name
+        Name cannot be empty!
+                Test 2.1 passed
+                Test 2.2 invalid client
+        Client Not a client not found. No changes made
+                Test 2.2 Passed
+        Test 2 passed
+
+isClient Testing
+        Test 1: Valid client
+        Test 1 passed
+
+        Test 2: empty name
+        Name cannot be empty!
+        Test 2 passed
+
+        Test 3: not a client
+        Test 3 passed
+
+        Client1's Information:
+        Address: Your mom's house
+        Social Security Number: 12345
+        Employer: Auburn
+        Annual income: 70000
+
+		
+***************************************************************************************************
+****************************************AccountManager Tests***************************************
+***************************************************************************************************	
+loadAccounts() testing
+        Test 1: Empty file
+        Test 1 passed
+
+        Test 2: File with two valid accounts
+        Test 2 Passed
+
+        Test 3: invalid file
+        Cannot open not-a-file.txt
+        Test 3 Passed
+
+saveAccounts() test
+        Test 1: saving account to valid file
+        Test 1 Passed
+
+addAccount() testing
+        Test 1: Normal case, add client with valid fields
+        Account added and saved to account file
+        Test 1 passed
+
+        Test 2: invalid fields
+                Test 2.1: Empty client name
+        Client name cannot be empty!
+                Test 2.1 passed
+                Test 2.2 invalid type
+        Invalid account type
+                Test 2.2 passed
+                Test 2.3 invalid balance
+        Balance cannot be less than zero
+                Test 2.3 passed
+        Test 2 passed
+
+        Test 3: Account already exists
+        Account 123456 already exists. No account added
+        Test 3 passed
+
+        Account added and saved to account file
+withdraw() test
+        Test 1: valid withdrawals
+        $500 withdrawn
+        $20 withdrawn
+        $1000 withdrawn
+        Test 1 passed
+
+        Test 2: invalid amount
+                Test 2.1: negative withdraw amount
+        Amount must be greater than 0
+                Test 2.1 passed
+                Test 2.2: attempt to overdraft
+        Cannot withdraw more than account balance
+                Test 2.2 passed
+        Test 2 passed
+
+        Test 3: account does not exist
+        Account 0 does not exist
+        Test 3 passed
+
+        Account added and saved to account file
+deposit() test
+        Test 1: valid deposits
+        $500 deposited
+        $20 deposited
+        $1000 deposited
+        Test 1 passed
+
+        Test 2: invalid amount
+                Test 2.1: negative deposit amount
+        Amount must be greater than 0 and cannot be greater than $100,000
+                Test 2.1 passed
+                Test 2.2: attempt to deposit more than $100,000
+        Amount must be greater than 0 and cannot be greater than $100,000
+                Test 2.2 passed
+        Test 2 passed
+
+        Test 3: account does not exist
+        Account 0 does not exist
+        Test 3 passed
+
+        Client1's Savings account #123456
+        Balance: $100	
