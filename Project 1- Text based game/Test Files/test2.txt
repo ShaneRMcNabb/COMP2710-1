@@ -1,0 +1,6 @@
+Name1
+50
+Name2
+30
+Name3
+1
