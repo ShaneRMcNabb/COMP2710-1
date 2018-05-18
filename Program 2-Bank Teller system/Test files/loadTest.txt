@@ -1,0 +1,6 @@
+testAdmin
+adminPass
+1
+testUser
+userPass
+0
